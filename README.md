@@ -1,12 +1,15 @@
-# Golang Boilerplate
+# Go Notebook Realtime
 
-This repository provides a boilerplate for starting a new Golang project.
+A real-time collaborative notebook application built with Golang.
 
 ## Features
 
-- Basic project structure
-- Example main file
-- Configuration setup
+- Real-time editing and collaboration
+- Notebook and note management
+- WebSocket-based updates
+- RESTful API for CRUD operations
+- Basic authentication (optional)
+- Modular project structure
 - Dependency management with Go modules
 
 ## Getting Started
@@ -19,11 +22,11 @@ This repository provides a boilerplate for starting a new Golang project.
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/golang-boilerplate.git
+    git clone https://github.com/yourusername/go-notebook-realtime.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd golang-boilerplate
+    cd go-notebook-realtime
     ```
 3. Install dependencies:
     ```sh
@@ -32,10 +35,11 @@ This repository provides a boilerplate for starting a new Golang project.
 
 ### Running the Project
 
-To run the project, use the following command:
+To start the server:
 ```sh
 go run main.go
 ```
+Then open your browser at `http://localhost:8080` to access the notebook UI.
 
 ## Contributing
 
