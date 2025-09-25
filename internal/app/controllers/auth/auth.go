@@ -43,7 +43,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 
 
 // Login handles the login request
-func Login(c *gin.Context) {
+func Login(c *gin.Context, r *http.Request) {
 	var user User
 	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request payload"})

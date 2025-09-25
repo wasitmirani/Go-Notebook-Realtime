@@ -1,10 +1,10 @@
 package services
 
 import (
+	"GoNotebookRealtime/internal/app/models"
+	"GoNotebookRealtime/internal/app/repositories"
+	"GoNotebookRealtime/internal/pkg/utils"
 	"errors"
-	"backendapp/internal/app/models"
-	"backendapp/internal/app/repositories"
-	"backendapp/internal/pkg/utils"
 )
 
 func Login(email, password string) (*models.User, error) {

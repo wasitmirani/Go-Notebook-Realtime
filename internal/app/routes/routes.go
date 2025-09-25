@@ -1,9 +1,9 @@
 package routes
 
 import (
+	"GoNotebookRealtime/internal/app/controllers/auth"
+
 	"github.com/gin-gonic/gin"
-	"backendapp/internal/app/controllers/auth"
-	
 )
 
 func SetupRoutes(router *gin.Engine) {
@@ -11,7 +11,7 @@ func SetupRoutes(router *gin.Engine) {
 	{
 		authRoutes := apiRoutes.Group("/auth")
 		{
-			authRoutes.POST("/login", gin.WrapF(auth.Login))
+			// authRoutes.POST("/login", gin.WrapF(auth.Login))
 			authRoutes.POST("/register", gin.WrapF(auth.Register))
 		}
 	}

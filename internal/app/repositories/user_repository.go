@@ -1,12 +1,10 @@
 package repositories
 
 import (
+	database "GoNotebookRealtime/db"
+	"GoNotebookRealtime/internal/app/models"
 	"errors"
-	"backendapp/internal/app/models"
-	"backendapp/db"
 )
-
-
 
 func FindUserByEmail(email string) (*models.User, error) {
 	var user models.User
@@ -15,7 +13,6 @@ func FindUserByEmail(email string) (*models.User, error) {
 	}
 	return &user, nil
 }
-
 
 func FindUserByUUID(uuid string) (*models.User, error) {
 	var user models.User
