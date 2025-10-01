@@ -1,8 +1,7 @@
 package config
 
 import (
-	"log"
-
+	"GoNotebookRealtime/internal/pkg/utils/logs"
 	"github.com/spf13/viper"
 )
 
@@ -34,7 +33,7 @@ func LoadConfig() Config {
     v.SetDefault("JWT_SECRET", "supersecretkey")
 
     if err := v.ReadInConfig(); err != nil {
-        log.Println("⚠️ No .env file found, relying only on environment variables")
+        logs.Warning("⚠️ No .env file found, relying only on environment variables")
     }
 
     return Config{
