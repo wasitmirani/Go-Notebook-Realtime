@@ -28,9 +28,10 @@ func SetupLogger(logDir string) {
 		os.Mkdir(logDir, 0755)
 	}
 
-	appName := "GoNotebookRealtime"
+	// appName := "GoNotebookRealtime"
+
 	writer, err := rotatelogs.New(
-		fmt.Sprintf("%s/%s-%%Y-%%m-%%d.log", logDir, appName),
+		logDir+"/app-%Y-%m-%d.log",
 		rotatelogs.WithRotationTime(24*time.Hour), // rotate daily
 		rotatelogs.WithMaxAge(7*24*time.Hour),     // keep 7 days
 	)
@@ -45,27 +46,27 @@ func SetupLogger(logDir string) {
 
 // Helper functions for log levels
 func Info(msg string) {
-	logger.Println(ColorGreen + " INFO: " + ColorReset + msg)
+	logger.Println(ColorGreen + " INFO: " + ColorReset + msg +  " | "+ time.Now().Format("2006-01-02 15:04:05"))
 }
 
 func Warning(msg string) {
-	logger.Println(ColorYellow + " WARNING: " + ColorReset + msg)
+	logger.Println(ColorYellow + " WARNING: " + ColorReset + msg +  " | "+ time.Now().Format("2006-01-02 15:04:05"))
 }
 
 func Error(msg string) {
-	logger.Println(ColorRed + " ERROR: " + ColorReset + msg)
+	logger.Println(ColorRed + " ERROR: " + ColorReset + msg +  " | "+ time.Now().Format("2006-01-02 15:04:05"))
 }
 
 func Danger(msg string) {
-	logger.Println(ColorRed + " DANGER: " + ColorReset + msg)
+	logger.Println(ColorRed + " DANGER: " + ColorReset + msg +  " | "+ time.Now().Format("2006-01-02 15:04:05"))
 }
 
 func Debug(msg string) {
-	logger.Println(ColorBlue + " DEBUG: " + ColorReset + msg)
+	logger.Println(ColorBlue + " DEBUG: " + ColorReset + msg +  " | "+ time.Now().Format("2006-01-02 15:04:05"))
 }
 
 func Success(msg string) {
-	logger.Println(ColorCyan + " SUCCESS: " + ColorReset + msg)
+	logger.Println(ColorCyan + " SUCCESS: " + ColorReset + msg +  " | "+ time.Now().Format("2006-01-02 15:04:05"))
 }
 
 // General purpose custom log

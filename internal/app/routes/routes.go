@@ -16,6 +16,13 @@ func SetupRoutes(router *gin.Engine) {
 		}
 	}
 
+	// Handle 404 - Not Found
+	router.NoRoute(func(c *gin.Context) {
+		c.JSON(404, gin.H{
+			"error": "Page not found",
+		})
+	})
+
 	// userRoutes := router.Group("/user")
 	// {
 	// 	userRoutes.GET("/:id", user.GetUser)
