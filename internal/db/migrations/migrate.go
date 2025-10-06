@@ -1,14 +1,14 @@
 package migrations
 
 import(
-	"log"
+
 	"gorm.io/gorm"
 	"GoNotebookRealtime/internal/app/models"
 )
 
 
 func RunMigrations(db *gorm.DB) {
-	log.Println("Running database migrations...")
+	logs.Println("Running database migrations...")
 	err := db.AutoMigrate(
 		&models.User{},
 		&models.Note{},
